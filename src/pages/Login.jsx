@@ -10,9 +10,11 @@ const Login = () => {
   const [login] = useLoginMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isloading,setIsloading] = useState(false)
 
    const loginHandler = async(e) => {
      e.preventDefault();
+     setIsloading(true)
      try{
        const userData = {email,password};
        const {data} = await login(userData)
@@ -44,8 +46,17 @@ const Login = () => {
            onChange={e => setPassword(e.target.value)}
           type="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 p-2.5 " placeholder="" required/>
         </div>
+        {isloading ? (
+          <div className=" mt-5">
+            <button className=' bg-stone-600 text-white px-8 rounded-md py-2' disabled>Loading</button>
+          </div>
+        ) : (
         <div className=" mt-5">
-        <button className=' bg-stone-800 text-white px-8 rounded-md py-2'>Login</button>
+           <button className=' bg-stone-800 text-white px-8 rounded-md py-2'>Login</button>
+        </div>
+          )}
+      <div className=" mt-10 text-end">
+        <p>Doens't have account <a className=' text-blue-400' href={'/register'}>Register</a> </p>
       </div>
       </div>
       </form>
