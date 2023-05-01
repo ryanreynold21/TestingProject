@@ -66,4 +66,8 @@ export const contentApi = createApi({
     }) 
 })
 
-export const {useRegisterMutation,useLoginMutation,useLogoutMutation,useContactQuery,useDeleteContactMutation,useCreateContactMutation,useUpdateContactMutation} = contentApi;
+export const {useRegisterMutation,
+            useLoginMutation,useLogoutMutation,
+            useContactQuery,useDeleteContactMutation,
+            useCreateContactMutation,
+            useUpdateContactMutation} = contentApi;

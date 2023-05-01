@@ -5,6 +5,9 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Guard from './components/Guard'
+import Create from './pages/Create'
+import Profile from './pages/Profile'
+import Edit from './pages/Edit'
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
         <Route path='/register' element={ <Register /> } />
         <Route path='/login' element={ <Login /> } />
         <Route path='/' element={ <Guard> <Dashboard /> </Guard> } />
+        <Route path='/create' element={ <Guard> <Create /> </Guard> } />
+        <Route path='/profile' element={ <Guard> <Profile /> </Guard> } />
+        <Route path='/edit/:id' element={ <Guard> <Edit /> </Guard> } />
       </Routes>
     </>
   )

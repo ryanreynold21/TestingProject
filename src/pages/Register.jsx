@@ -28,7 +28,7 @@ const Register = () => {
   return (
     <div className=' flex rounded-md shadow-2xl h-screen'>
 
-     <div className=" bg-[#3a4554] text-center p-10">
+     <div className=" bg-sky-500 text-center p-10 hidden sm:block md:block lg:block">
         <div className=" mt-[200px]">
             <h1 className=' text-white text-[30px] mb-5'>MMS-Contact</h1>
             <p className=' text-[10px] text-gray-200'>Lorem as,cere dignissimos odio ut fugiat dolore ipsam ei id eligendi sequi!</p>
@@ -36,8 +36,8 @@ const Register = () => {
      </div>
 
      <div className=" bg-white w-full p-10">
-      <div className=" flex ml-[600px] items-center">
-        <h1 className=' text-[15px] text-stone-500'>Already have an account ?</h1>
+      <div className=" flex-col text-end sm:flow-row md:flex-row lg:flex lg:ml-[600px] items-center">
+        <h1 className=' sm:block text-[15px] text-stone-500'>Already have an account ?</h1>
         <button onClick={() => navigate('/login')} className=' px-6 py-1 border border-black rounded-md ml-2'>Login</button>
       </div>
 
@@ -75,11 +75,12 @@ const Register = () => {
         onChange={e => setPasswordComfirmation(e.target.value)}       
         type="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block pl-10 p-2.5 " placeholder="" required/>
       </div>
-      <div className="">
-        <button className=' bg-stone-800 text-white px-8 rounded-md py-2'>Sing up</button>
+      <div className=" mt-5">
+        <button className=' bg-sky-600 text-white px-8 rounded-md py-2'>Sing up</button>
       </div>
       </form>
      </div>
+     
     </div>
   )
 }
