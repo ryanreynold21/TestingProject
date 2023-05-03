@@ -10,9 +10,9 @@ const Login = () => {
   const [email,setEmail] = useState('admin@gmail.com');
   const [password,setPassword] = useState('admin123');
   const [login] = useLoginMutation();
+  const [isloading,setIsloading] = useState(false)
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [isloading,setIsloading] = useState(false)
    const loginHandler = async(e) => {
      e.preventDefault();
      setIsloading(true)

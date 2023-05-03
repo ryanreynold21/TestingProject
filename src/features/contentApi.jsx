@@ -63,11 +63,21 @@ export const contentApi = createApi({
             }),
             invalidatesTags : ['contentApi'] 
         }),
+       singleContact: builder.query({
+            query:({token,id}) => ({
+                url:`/contact/${id}`,
+                headers:{authorization:`Bearer ${token}`}
+            }),
+            providesTags:['contentApi']
+        }),
     }) 
 })
 
 export const {useRegisterMutation,
-            useLoginMutation,useLogoutMutation,
-            useContactQuery,useDeleteContactMutation,
-            useCreateContactMutation,
-            useUpdateContactMutation} = contentApi;
+                useLoginMutation,
+                useLogoutMutation,
+                useContactQuery,
+                useDeleteContactMutation,
+                useCreateContactMutation,
+                useSingleContactQuery,
+                useUpdateContactMutation} = contentApi;

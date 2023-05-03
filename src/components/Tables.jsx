@@ -1,15 +1,15 @@
-import React from 'react'
-import { useContactQuery, useDeleteContactMutation } from '../features/contentApi'
+import React, { useState } from 'react'
+import { useContactQuery, useDeleteContactMutation, useSingleContactQuery } from '../features/contentApi'
 import {AiOutlineDelete} from 'react-icons/ai';
 import {FiEdit2} from 'react-icons/fi'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import Loader from './Loader/Loader'
+import axios from 'axios'
 
 const Tables = () => {
     const token = localStorage.getItem('token');
     const {data} = useContactQuery({token})
-    console.log(data?.success)
     const [deleteContact] = useDeleteContactMutation();
     const navigate = useNavigate()
 
@@ -50,8 +50,8 @@ const Tables = () => {
           <tbody>
               {data?.contacts?.data?.map(contact => {
                   return(
-                      <tr key={contact?.id}>
-                          <td>{contact?.name}</td>
+                      <tr key={contact?.id} className=''>
+                          <td className=' hover:bg-stone-100 cursor-pointer' onClick={() => navigate(`/detail/${contact?.id}`) }>{contact?.name}</td>
                           <td>{contact?.phone}</td> 
                           <td className=' w-20'>
                             <div className=" flex">
