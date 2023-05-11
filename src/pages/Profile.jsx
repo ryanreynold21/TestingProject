@@ -7,9 +7,6 @@ const Profile = () => {
   console.log(user)
   return (
         <div className=' bg-[#F8FAFB]'>
-        <Navbar />
-      <div className=" flex">
-        <Menubar />
           <div className="card w-96 h-[600px] bg-base-100 shadow-xl m-20">
             <figure><img src="https://i.pinimg.com/564x/c6/82/40/c6824056ffb733ca09874439cf38acc7.jpg" alt="" /></figure>
             <div className="card-body">
@@ -22,7 +19,6 @@ const Profile = () => {
               </div>
             </div>
           </div>
-      </div>
     </div>
   )
 }
