@@ -23,7 +23,7 @@ export const contentApi = createApi({
         }),
         logout: builder.mutation({
             query:(token) => ({
-                url:'user-logout',
+                url:'/user-logout',
                 method:'POST',
                 headers : {authorization:`Bearer ${token}`}
             }),

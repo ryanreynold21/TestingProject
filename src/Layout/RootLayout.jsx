@@ -1,9 +1,10 @@
 import React from 'react'
-import Menubar from '../components/Menubar'
-import Navbar from '../components/Navbar'
-import { Outlet } from 'react-router-dom'
 
-const RootLayout = () => {
+import { Outlet } from 'react-router-dom'
+import Navbar from './Navbar'
+import Menubar from './Menubar'
+
+const RootLayout = ({children}) => {
   return (
     <div className=''>
       <div className="">
@@ -11,7 +12,7 @@ const RootLayout = () => {
       </div>
       <div className=" flex">
         <Menubar />
-        <Outlet />
+        {children} 
       </div>
     </div>
   )

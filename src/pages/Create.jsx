@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
-import Menubar from '../components/Menubar'
+import Navbar from '../Layout/Navbar'
+import Menubar from '../Layout/Menubar'
 import { useCreateContactMutation } from '../features/contentApi'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
+import RootLayout from '../Layout/RootLayout'
 
 const Create = () => {
   const token = localStorage.getItem('token')
@@ -46,6 +47,7 @@ const Create = () => {
       navigate('/')
   }
   return (
+    <RootLayout>
     <div className=''>
         <div className=" flex">
           <div className=" mt-20 p-10 ml-20 border rounded-md border-stone-300 bg-stone-100 w-[600px] shadow-xl h-screen">
@@ -91,6 +93,7 @@ const Create = () => {
           </div>
         </div>
     </div>
+    </RootLayout>
   )
 }
 

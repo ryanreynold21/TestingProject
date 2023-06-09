@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Menubar from '../components/Menubar'
+import Navbar from '../Layout/Navbar'
+import Menubar from '../Layout/Menubar'
 import { useSingleContactQuery } from '../features/contentApi'
 import Loader from '../components/Loader/Loader'
 

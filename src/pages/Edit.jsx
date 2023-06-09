@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
-import Menubar from '../components/Menubar'
+import Navbar from '../Layout/Navbar'
+import Menubar from '../Layout/Menubar'
 import { useUpdateContactMutation } from '../features/contentApi'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -31,9 +31,7 @@ const Edit = () => {
   }
   return (
     <div className=''>
-          <Navbar />
         <div className=" flex">
-          <Menubar />
           <div className=" mt-20 p-10 ml-20 border rounded-md border-stone-300 bg-stone-100 w-[600px] shadow-xl h-screen">
             <form action="" onSubmit={submitHandler}>
             <div className=" mt-5">

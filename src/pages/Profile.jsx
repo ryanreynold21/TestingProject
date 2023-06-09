@@ -1,11 +1,13 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Menubar from '../components/Menubar'
+import Navbar from '../Layout/Navbar'
+import Menubar from '../Layout/Menubar'
+import RootLayout from '../Layout/RootLayout'
 
 const Profile = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   console.log(user)
   return (
+    <RootLayout>
         <div className=' bg-[#F8FAFB]'>
           <div className="card w-96 h-[600px] bg-base-100 shadow-xl m-20">
             <figure><img src="https://i.pinimg.com/564x/c6/82/40/c6824056ffb733ca09874439cf38acc7.jpg" alt="" /></figure>
@@ -20,6 +22,7 @@ const Profile = () => {
             </div>
           </div>
     </div>
+    </RootLayout>
   )
 }
 
